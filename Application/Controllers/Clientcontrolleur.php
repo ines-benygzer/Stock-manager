@@ -18,7 +18,7 @@ class ClientController {
         $result = $this->clientService->create($data);
         echo $result ? "Client ajouté avec succès !" : "Erreur lors de l'ajout du client.";
     }
-
+    //testing github 
     // --- Supprimer ---
     public function supprimerForm($client_id = null) {
     if ($client_id) {

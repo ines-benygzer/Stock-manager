@@ -47,7 +47,7 @@ class ClientController {
     $result = $this->clientService->update($employee_id, $client_id, $data['telephone']);
     return $result;
 }
-
+//testing by terminal 
 
 }
 ?>

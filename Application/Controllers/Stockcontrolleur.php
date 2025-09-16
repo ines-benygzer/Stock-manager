@@ -20,8 +20,20 @@ class StockController {
         }
     }
 
-    public function afficherStock() {
-        return $this->stockService->getAllProducts();
+    // Nouvelle méthode pour afficher le stock
+    public function index() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Récupérer la liste des produits
+        $produits = $this->stockService->getAllProducts();
+
+        // Vérifier si l'utilisateur est admin
+        $isAdmin = isset($_SESSION['user_id']) && $this->stockService->isAdmin($_SESSION['user_id']);
+
+        // Charger la vue
+        require __DIR__ . '/../views/Voir_stock.php';
     }
 
     public function ajouterProduit($nom, $description, $prix, $quantite_stock) {
@@ -58,5 +70,4 @@ class StockController {
         return $success ? ["success" => "Produit supprimé avec succès !"] : ["error" => "Erreur lors de la suppression du produit."];
     }
 }
-?>
 

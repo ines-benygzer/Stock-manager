@@ -16,12 +16,27 @@ $router->map('GET', '/stock', function () {
 
 $router->map('POST', '/stock/ajouter', function () {
     $controller = new StockController('localhost', 'inesbenygzer', 'root', '');
-    $controller->ajouterProduit($_POST['nom'], $_POST['description'], $_POST['prix'], $_POST['quantite_stock']);
+    $result= $controller->ajouterProduit($_POST['nom'], $_POST['description'], $_POST['prix'], $_POST['quantite_stock']);
+    
+
+    $_SESSION['message'] = $result['success'] ?? $result['error'];
+    $_SESSION['status']  = isset($result['success']) ? 'success' : 'error';
+
+    // redirection pour éviter le re-post
+    header("Location: /inesbenygzer/public/stock");
+    exit;
 });
 
 $router->map('POST', '/stock/supprimer', function () {
     $controller = new StockController('localhost', 'inesbenygzer', 'root', '');
     $controller->supprimerProduit($_POST['id_produit']);
+    $result = $controller->supprimerProduit($_POST['id_produit']);
+
+    $_SESSION['message'] = $result['success'] ?? $result['error'];
+    $_SESSION['status']  = isset($result['success']) ? 'success' : 'error';
+
+    header("Location: /inesbenygzer/public/stock");
+    exit;
 });
 
 // Client routes
@@ -141,6 +156,7 @@ $router->map('POST', '/factures/ajouter', function() {
             }
         }
     }
+
 
     // Calcul du total
     $total = 0;

@@ -47,7 +47,7 @@ try {
 
         /* Image en haut de la page - Taille augmentée */
         .header-image {
-            background-image: url('stand-up-paddle-lexique.jpg.avif'); /* Remplacez par l'image réelle */
+            background-image: url('/inesbenygzer/stand-up-paddle-lexique.jpg.avif'); /* Remplacez par l'image réelle */
             height: 350px;
             background-size: cover;
             background-position: center;
@@ -193,27 +193,27 @@ try {
     <!-- Galerie des liens -->
     <div class="link-gallery">
         <a href=/inesbenygzer/public/clients/ajouter>
-            <img src="DALL·E 2024-12-15 23.18.41 - A modern and minimalistic design representing the concept of 'Ajouter un client' (Add a client). The image should feature a user profile icon with a '.webp " alt="Ajouter Client">
+            <img src="/inesbenygzer/DALL·E 2024-12-15 23.18.41 - A modern and minimalistic design representing the concept of 'Ajouter un client' (Add a client). The image should feature a user profile icon with a '.webp " alt="Ajouter Client">
             <span>Ajouter un Client</span>
         </a>
         <a href=/inesbenygzer/public/clients/supprimer>
-            <img src="DALL·E 2024-12-15 23.18.39 - A modern and minimalistic design representing the concept of 'Supprimer un client' (Remove a client). The image should feature a user profile icon wit.webp " alt="Supprimer Client">
+            <img src="/inesbenygzer/DALL·E 2024-12-15 23.18.39 - A modern and minimalistic design representing the concept of 'Supprimer un client' (Remove a client). The image should feature a user profile icon wit.webp " alt="Supprimer Client">
             <span>Supprimer un Client</span>
         </a>
         <a href=/inesbenygzer/public/clients/modifier>
-            <img src="DALL·E 2024-12-15 23.18.32 - A modern and minimalistic design representing the concept of 'Modification d'un client' (Modify a client). The image should feature a user profile ico.webp" alt="Modifier Client">
+            <img src="/inesbenygzer/DALL·E 2024-12-15 23.18.32 - A modern and minimalistic design representing the concept of 'Modification d'un client' (Modify a client). The image should feature a user profile ico.webp" alt="Modifier Client">
             <span>Modifier un Client</span>
         </a>
         <a href=/inesbenygzer/public/factures>
-            <img src="DALL·E 2024-12-15 23.42.03 - A clean and modern graphic design representing 'Voir facture' for a web gallery. The image features an icon of a magnifying glass over a document, sur.webp" alt="Voir Factures">
+            <img src="/inesbenygzer/DALL·E 2024-12-15 23.42.03 - A clean and modern graphic design representing 'Voir facture' for a web gallery. The image features an icon of a magnifying glass over a document, sur.webp" alt="Voir Factures">
             <span>Voir les Factures</span>
         </a>
         <a href=/inesbenygzer/public/factures/ajouter>
-            <img src="DALL·E 2024-12-15 23.42.01 - A clean and modern graphic design representing 'Ajouter une facture' for a web gallery. The image features an icon of a document with a plus sign, sur.webp" alt="Ajouter Facture">
+            <img src="/inesbenygzer/DALL·E 2024-12-15 23.42.01 - A clean and modern graphic design representing 'Ajouter une facture' for a web gallery. The image features an icon of a document with a plus sign, sur.webp" alt="Ajouter Facture">
             <span>Ajouter une Facture</span>
         </a>
-        <a href=Application/views/Voir_stock.php>
-            <img src="DALL·E 2024-12-15 23.42.29 - A clean and modern graphic design representing 'Voir les stocks' for a web gallery. The image features an icon of stacked boxes or a warehouse with a .webp" alt="Voir Stock">
+        <a href=/inesbenygzer/public/stock>
+            <img src="/inesbenygzer/DALL·E 2024-12-15 23.42.29 - A clean and modern graphic design representing 'Voir les stocks' for a web gallery. The image features an icon of stacked boxes or a warehouse with a .webp" alt="Voir Stock">
             <span>Voir les Stocks</span>
         </a>
 

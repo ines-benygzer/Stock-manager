@@ -1,34 +1,26 @@
 <?php
-require_once "../Controllers/Stockcontrolleur.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$host = 'localhost';
-$dbname = 'inesbenygzer';
-$username = 'root';
-$password = '';
-$stockController = new StockController($host, $dbname, $username, $password);
-
+// Application/Views/stock.php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$isAdmin = isset($_SESSION['user_id']) && $stockController->isAdmin($_SESSION['user_id']);
 
-$message = null;
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-    if ($_POST['action'] === 'ajouter') {
-        $message = $stockController->ajouterProduit($_POST['nom'], $_POST['description'], $_POST['prix'], $_POST['quantite_stock']);
-    } elseif ($_POST['action'] === 'supprimer' && isset($_POST['id_produit'])) {
-        $message = $stockController->supprimerProduit($_POST['id_produit']);
-    }
-}
+if (!empty($_SESSION['message'])): ?>
+    <p class="message <?= $_SESSION['status'] ?? ''; ?>">
+        <?= htmlspecialchars($_SESSION['message']); ?>
+    </p>
+    <?php unset($_SESSION['message'], $_SESSION['status']); ?>
+<?php endif; ?>
 
-$produits = $stockController->afficherStock();
-?>
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Gestion du Stock</title>
@@ -123,16 +115,17 @@ $produits = $stockController->afficherStock();
 <body>
     <h2>Bienvenue dans votre gestionnaire de stock</h2>
 
-    <?php if ($message): ?>
-        <p class="message <?= isset($message['error']) ? 'error' : 'success'; ?>">
-            <?= isset($message['error']) ? htmlspecialchars($message['error']) : htmlspecialchars($message['success']); ?>
+    <?php if (!empty($_SESSION['message'])): ?>
+        <p class="message <?= $_SESSION['status'] ?? ''; ?>">
+            <?= htmlspecialchars($_SESSION['message']); ?>
         </p>
+        <?php unset($_SESSION['message'], $_SESSION['status']); ?>
     <?php endif; ?>
 
     <div class="stock-list">
         <h3>Liste des produits :</h3>
         <ul>
-            <?php if (count($produits) > 0): ?>
+            <?php if (!empty($produits)): ?>
                 <?php foreach ($produits as $produit): ?>
                     <li>
                         <strong><?= htmlspecialchars($produit['nom']); ?></strong><br>
@@ -140,9 +133,8 @@ $produits = $stockController->afficherStock();
                         Prix: <?= number_format($produit['prix'], 2, ',', ' '); ?> DA<br>
                         Quantité en stock: <?= htmlspecialchars($produit['quantite_stock']); ?><br>
                         <?php if ($isAdmin): ?>
-                            <form method="POST">
+                            <form method="POST" action="/inesbenygzer/public/stock/supprimer">
                                 <input type="hidden" name="id_produit" value="<?= htmlspecialchars($produit['id_produit']); ?>">
-                                <input type="hidden" name="action" value="supprimer">
                                 <input type="submit" value="Supprimer" onclick="return confirm('Êtes-vous sûr ?');">
                             </form>
                         <?php endif; ?>
@@ -157,8 +149,7 @@ $produits = $stockController->afficherStock();
     <?php if ($isAdmin): ?>
         <div class="add-product">
             <h3>Ajouter un produit :</h3>
-            <form method="POST">
-                <input type="hidden" name="action" value="ajouter">
+            <form method="POST" action="/inesbenygzer/public/stock/ajouter">
                 <label for="nom">Nom :</label>
                 <input type="text" name="nom" required>
                 <label for="description">Description :</label>
@@ -173,4 +164,3 @@ $produits = $stockController->afficherStock();
     <?php endif; ?>
 </body>
 </html>
-

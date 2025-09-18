@@ -21,7 +21,7 @@ unset($_SESSION['message'], $_SESSION['status']);
         body {
             margin: 0;
             padding: 0;
-            background-image: url('Snorkeling easybreath petite banner.jpg');
+            background-image: url('/Stock-manager/Snorkeling easybreath petite banner.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -80,7 +80,7 @@ unset($_SESSION['message'], $_SESSION['status']);
 <body>
     <div class="form-container">
         <h1>Modifier un Client</h1>
-        <form method="POST" action="/inesbenygzer/public/clients/modifier" >
+        <form method="POST" action="/Stock-manager/public/clients/modifier" >
             <label>ID du Client :</label>
             <input type="number" name="id_client" placeholder="Entrez l'ID du client" required>
 

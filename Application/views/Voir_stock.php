@@ -134,7 +134,7 @@ if (!empty($_SESSION['message'])): ?>
                         Prix: <?= number_format($produit['prix'], 2, ',', ' '); ?> DA<br>
                         Quantité en stock: <?= htmlspecialchars($produit['quantite_stock']); ?><br>
                         <?php if ($isAdmin): ?>
-                            <form method="POST" action="/inesbenygzer/public/stock/supprimer">
+                            <form method="POST" action="/Stock-manager/public/stock/supprimer">
                                 <input type="hidden" name="id_produit" value="<?= htmlspecialchars($produit['id_produit']); ?>">
                                 <input type="submit" value="Supprimer" onclick="return confirm('Êtes-vous sûr ?');">
                             </form>
@@ -150,7 +150,7 @@ if (!empty($_SESSION['message'])): ?>
     <?php if ($isAdmin): ?>
         <div class="add-product">
             <h3>Ajouter un produit :</h3>
-            <form method="POST" action="/inesbenygzer/public/stock/ajouter">
+            <form method="POST" action="/Stock-manager/public/stock/ajouter">
                 <label for="nom">Nom :</label>
                 <input type="text" name="nom" required>
                 <label for="description">Description :</label>

@@ -47,7 +47,7 @@ try {
 
         /* Image en haut de la page - Taille augmentée */
         .header-image {
-            background-image: url('/inesbenygzer/stand-up-paddle-lexique.jpg.avif'); /* Remplacez par l'image réelle */
+            background-image: url('/Stock-manager/stand-up-paddle-lexique.jpg.avif'); /* Remplacez par l'image réelle */
             height: 350px;
             background-size: cover;
             background-position: center;
@@ -192,28 +192,28 @@ try {
 
     <!-- Galerie des liens -->
     <div class="link-gallery">
-        <a href=/inesbenygzer/public/clients/ajouter>
-            <img src="/inesbenygzer/DALL·E 2024-12-15 23.18.41 - A modern and minimalistic design representing the concept of 'Ajouter un client' (Add a client). The image should feature a user profile icon with a '.webp " alt="Ajouter Client">
+        <a href=/Stock-manager/public/clients/ajouter>
+            <img src="/Stock-manager/DALL·E 2024-12-15 23.18.41 - A modern and minimalistic design representing the concept of 'Ajouter un client' (Add a client). The image should feature a user profile icon with a '.webp " alt="Ajouter Client">
             <span>Ajouter un Client</span>
         </a>
-        <a href=/inesbenygzer/public/clients/supprimer>
-            <img src="/inesbenygzer/DALL·E 2024-12-15 23.18.39 - A modern and minimalistic design representing the concept of 'Supprimer un client' (Remove a client). The image should feature a user profile icon wit.webp " alt="Supprimer Client">
+        <a href=/Stock-manager/public/clients/supprimer>
+            <img src="/Stock-manager/DALL·E 2024-12-15 23.18.39 - A modern and minimalistic design representing the concept of 'Supprimer un client' (Remove a client). The image should feature a user profile icon wit.webp " alt="Supprimer Client">
             <span>Supprimer un Client</span>
         </a>
-        <a href=/inesbenygzer/public/clients/modifier>
-            <img src="/inesbenygzer/DALL·E 2024-12-15 23.18.32 - A modern and minimalistic design representing the concept of 'Modification d'un client' (Modify a client). The image should feature a user profile ico.webp" alt="Modifier Client">
+        <a href=/Stock-manager/public/clients/modifier>
+            <img src="/Stock-manager/DALL·E 2024-12-15 23.18.32 - A modern and minimalistic design representing the concept of 'Modification d'un client' (Modify a client). The image should feature a user profile ico.webp" alt="Modifier Client">
             <span>Modifier un Client</span>
         </a>
-        <a href=/inesbenygzer/public/factures>
-            <img src="/inesbenygzer/DALL·E 2024-12-15 23.42.03 - A clean and modern graphic design representing 'Voir facture' for a web gallery. The image features an icon of a magnifying glass over a document, sur.webp" alt="Voir Factures">
+        <a href=/Stock-manager/public/factures>
+            <img src="/Stock-manager/DALL·E 2024-12-15 23.42.03 - A clean and modern graphic design representing 'Voir facture' for a web gallery. The image features an icon of a magnifying glass over a document, sur.webp" alt="Voir Factures">
             <span>Voir les Factures</span>
         </a>
-        <a href=/inesbenygzer/public/factures/ajouter>
-            <img src="/inesbenygzer/DALL·E 2024-12-15 23.42.01 - A clean and modern graphic design representing 'Ajouter une facture' for a web gallery. The image features an icon of a document with a plus sign, sur.webp" alt="Ajouter Facture">
+        <a href=/Stock-manager/public/factures/ajouter>
+            <img src="/Stock-manager/DALL·E 2024-12-15 23.42.01 - A clean and modern graphic design representing 'Ajouter une facture' for a web gallery. The image features an icon of a document with a plus sign, sur.webp" alt="Ajouter Facture">
             <span>Ajouter une Facture</span>
         </a>
-        <a href=/inesbenygzer/public/stock>
-            <img src="/inesbenygzer/DALL·E 2024-12-15 23.42.29 - A clean and modern graphic design representing 'Voir les stocks' for a web gallery. The image features an icon of stacked boxes or a warehouse with a .webp" alt="Voir Stock">
+        <a href=/Stock-manager/public/stock>
+            <img src="/Stock-manager/DALL·E 2024-12-15 23.42.29 - A clean and modern graphic design representing 'Voir les stocks' for a web gallery. The image features an icon of stacked boxes or a warehouse with a .webp" alt="Voir Stock">
             <span>Voir les Stocks</span>
         </a>
 

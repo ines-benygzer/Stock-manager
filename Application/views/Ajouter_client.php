@@ -77,7 +77,7 @@ unset($_SESSION['message'], $_SESSION['status']);
 <body>
     <div class="classform">
         <h1>Bienvenue!</h1>
-        <form method="POST" action="/inesbenygzer/public/clients/ajouter ">
+        <form method="POST" action="/Stock-manager/public/clients/ajouter ">
             <div class="classemail">
                 <label>Email:</label>
                 <input type="email" name="email" required>

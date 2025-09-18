@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /inesbenygzer/public/
+RewriteBase /Stock-manager/public/
 
 # Redirect all non-existing files/folders to index.php
 RewriteCond %{REQUEST_FILENAME} !-f

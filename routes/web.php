@@ -6,8 +6,7 @@ require_once __DIR__ . '/../Application/Controllers/Clientcontrolleur.php';
 require_once __DIR__ . '/../Application/Controllers/Facturecontrolleur.php';
 
 $router = new AltoRouter();
-$router->setBasePath('/inesbenygzer/public'); // Adjust if your XAMPP URL differs
-
+$router->setBasePath('/Stock-manager/public'); // Adjust if your XAMPP URL differs
 // Stock routes
 $router->map('GET', '/stock', function () {
     $controller = new StockController('localhost', 'inesbenygzer', 'root', '');
@@ -23,7 +22,7 @@ $router->map('POST', '/stock/ajouter', function () {
     $_SESSION['status']  = isset($result['success']) ? 'success' : 'error';
 
     // redirection pour éviter le re-post
-    header("Location: /inesbenygzer/public/stock");
+    header("Location: /Stock-manager/public/stock");
     exit;
 });
 
@@ -35,7 +34,7 @@ $router->map('POST', '/stock/supprimer', function () {
     $_SESSION['message'] = $result['success'] ?? $result['error'];
     $_SESSION['status']  = isset($result['success']) ? 'success' : 'error';
 
-    header("Location: /inesbenygzer/public/stock");
+    header("Location: /Stock-manager/public/stock");
     exit;
 });
 
@@ -52,7 +51,7 @@ $router->map('GET|POST', '/clients/supprimer', function () {
         $_SESSION['message'] = $result['success'] ? 'Client supprimé avec succès.' : $result['message'];
         $_SESSION['status'] = $result['success'] ? 'success' : 'error';
 
-        header("Location: /inesbenygzer/public/clients/supprimer");
+        header("Location: /Stock-manager/public/clients/supprimer");
         exit();
     }
 
@@ -75,7 +74,7 @@ $router->map('GET|POST', '/clients/modifier', function() {
         $_SESSION['message'] = $result['message'];
         $_SESSION['status'] = $result['success'] ? 'success' : 'error';
 
-        header("Location: /inesbenygzer/public/clients/modifier"); // Redirect to avoid resubmission
+        header("Location: /Stock-manager/public/clients/modifier"); // Redirect to avoid resubmission
         exit();
     }
 
@@ -106,7 +105,7 @@ $router->map('POST', '/clients/ajouter', function() {
         $_SESSION['status'] = $result['success'] ? 'success' : 'error';
 
         // Redirect to avoid resubmission
-        header("Location: /inesbenygzer/public/clients/ajouter");
+        header("Location: /Stock-manager/public/clients/ajouter");
         exit();
     }
 
@@ -173,7 +172,7 @@ $router->map('POST', '/factures/ajouter', function() {
     $_SESSION['message'] = $result['message'];
     $_SESSION['status']  = $result['success'] ? 'success' : 'error';
 
-    header("Location: /inesbenygzer/public/factures/ajouter");
+    header("Location: /Stock-manager/public/factures/ajouter");
     exit;
 });
 

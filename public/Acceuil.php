@@ -1,34 +1,14 @@
 <?php
-session_start();
 
-// Vérifier si l'utilisateur est connecté
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (!isset($_SESSION['username'])) {
-    // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
-    header('Location: login.php');
+    header('Location: /Stock-manager/public/login');
     exit();
 }
-// Paramètres de connexion
-$host = 'localhost';
-$dbname = 'inesbenygzer';
-$username = 'root';
-$password = ''; // Remplace par ton mot de passe
 
-try {
-    // Connexion à la base de données avec PDO
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Requête pour récupérer les produits
-    $sql = "SELECT id_produit, nom, description, prix, quantite_stock FROM produits WHERE quantite_stock > 0";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-
-    // Récupérer les résultats
-    $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $message = $_SESSION['message'] ?? "";
 $status  = $_SESSION['status'] ?? "";
 unset($_SESSION['message'], $_SESSION['status']);
